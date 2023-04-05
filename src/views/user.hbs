@@ -1,0 +1,59 @@
+
+<h1>Hello {{user.username}} !</h1>
+<br>
+
+<h2>Add a Game</h2>
+{{#if message}}
+<div class="error">{{ message }}</div>
+{{/if}}
+<form method="POST" action="/user/{{user.username}}">
+	<div>
+		<label for="username">Game Name:</label>
+		<input type="text" name="gameName" value="">
+	</div>
+	<div>
+		<label for="company">Company:</label> 
+		<input type="text" name="company" value="">
+	</div>
+	<div>
+		<label for="type">Type:</label>
+		<input type="text" name="type" value="">
+	</div>
+    <div>
+		<label for="year">Year:</label>
+		<input type="text" name="year" value="">
+	</div>
+	<div><input type="submit" value="Enter"></div>
+</form>
+
+
+<br>
+<h2>My Game List</h2>
+<table>
+  <tr>
+    <th>Game Name</th>
+    <th>Company</th>
+    <th>Type</th>
+    <th>Year</th>
+  </tr>
+
+    {{#each data as |ele|}}
+        <tr>
+            <td>
+                {{ele.gameName}}
+            </td>
+            <td>
+                {{ele.company}}
+            </td>
+            <td>
+                {{ele.type}}
+            </td>
+            <td>
+                {{ele.year}}
+            </td>
+        </tr>
+    {{/each}}
+</table>
+
+
+

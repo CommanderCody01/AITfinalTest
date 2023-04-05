@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+{{!-- <link rel="stylesheet" href="/css/site.css" type="text/css" media="screen" title="no title" charset="utf-8"> --}}
+</head>
+<body>
+	<span class="login-status">
+		{{#if user}}
+		<!--<span class="success">Logged in as: {{user.username}}</span>-->
+		Logged in as: {{user.username}} <form method="POST" action="/logout" id="logout-form"> | <button>logout</button></form>
+		{{!-- {{else}}
+		<a href="/register">Register</a> or <a href="/login">Login</a> --}}
+		{{/if}}
+	</span>
+
+	{{{ body }}}
+
+</body>
+</html>

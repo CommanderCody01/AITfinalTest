@@ -1,0 +1,17 @@
+<h1>Welcome !!!</h1>
+
+
+
+<nav>
+    <ul>
+        {{#if user}}
+            <a href="/user/{{user.username}}"><li>My HomePage</li></a>   
+            <a href="/Forum"><li>Forum Page</li></a>
+        {{/if}}
+        {{!-- <a href="/slug"><li>My HomePage</li></a>  --}}
+        {{!-- slug是username --}}
+        <a href="/login"><li>Login</li></a>
+        <a href="/register"><li>Register</li></a>
+        <a href="https://i6.cims.nyu.edu/~qy624/"><li>About Author</li></a>
+    </ul>
+</nav>
