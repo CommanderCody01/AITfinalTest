@@ -4,8 +4,15 @@ import slug from 'mongoose-slug-updater';
 
 
 console.log('Waiting for connection to database...')
+// try {
+//   await mongoose.connect('mongodb://localhost/finalTest', {useNewUrlParser: true});
+//   console.log('Successfully connected to database.')
+// } catch (err) {
+//   console.log('ERROR: ', err);
+// }
+
 try {
-  await mongoose.connect('mongodb://localhost/finalTest', {useNewUrlParser: true});
+  await mongoose.connect('mongodb://qy624:5aniwGzT@class-mongodb.cims.nyu.edu/qy624', {useNewUrlParser: true});
   console.log('Successfully connected to database.')
 } catch (err) {
   console.log('ERROR: ', err);
