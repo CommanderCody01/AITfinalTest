@@ -9,16 +9,12 @@
 {{#if message}}
 <div class="error">{{ message }}</div>
 {{/if}}
-<form method="POST" action="/forum}">
+<form method="POST" action="/forum">
 
     <input type="hidden" id="user" name="userName" value={{user.username}}>
 	<div>
 		<label for="gameName">Game Name:</label>
 		<input type="text" name="gameName" value="">
-	</div>
-	<div>
-		<label for="company">Company:</label> 
-		<input type="text" name="company" value="">
 	</div>
     <br>
 	<div>

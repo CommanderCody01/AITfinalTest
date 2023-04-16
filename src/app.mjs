@@ -80,7 +80,7 @@ app.post("/user/:slug",authRequired, async(req, res) =>{
             type: req.body.type,
             year: req.body.year,
         });
-        g.save().then( async(saved) => {
+        await g.save().then( async(saved) => {
             const list = user.gameLists;
             list.push(g);
             await User.updateOne({username: req.params.slug},{$set: {gameLists: list}}).exec();
@@ -105,15 +105,46 @@ app.post("/user/:slug",authRequired, async(req, res) =>{
 
 });
 
-app.get("/forum", authRequired, (req, res)=>{
+app.get("/forum", authRequired, async(req, res)=>{
 
   const f1 = req.query.reviewManName;                 // filter 1
   const f2 = req.query.game;
-  const f3 = req.query.userName;
-  console.log(f3);
-    
 
-  res.render('forum');
+  const fiter = {};
+  if(f1 !== undefined ){
+    if(f1 !== ""){
+      fiter['reviewManName'] = f1;
+    }
+   
+  }
+  if(f2 !== undefined ){
+    if(f2 !== ""){
+      fiter['game'] = f2;
+    }
+  }
+
+  // const dataRe =  await Review.find(fiter).exec();
+  Review.find(fiter).then(found =>{
+    // res.render('main.hbs', {data: found});  
+    res.render('forum', {data:found} );
+  } );
+
+  
+})
+
+app.post("/forum", authRequired, async(req, res)=>{
+
+  const r = new Review({
+    reviewManName: req.body.userName,
+    game: req.body.gameName,
+    description: req.body.description,
+  });
+
+  await r.save().then( async(saved) => {
+
+    res.redirect("/forum");
+  } );
+
 })
 
 
