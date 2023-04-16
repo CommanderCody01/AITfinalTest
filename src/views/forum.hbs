@@ -1,0 +1,77 @@
+
+<h1>Welcome {{user.username}}</h1>
+
+<h1>All the Review</h1>
+<br>
+<h2>Make a review </h2>
+<br>
+
+{{#if message}}
+<div class="error">{{ message }}</div>
+{{/if}}
+<form method="POST" action="/forum}">
+
+    <input type="hidden" id="user" name="userName" value={{user.username}}>
+	<div>
+		<label for="gameName">Game Name:</label>
+		<input type="text" name="gameName" value="">
+	</div>
+	<div>
+		<label for="company">Company:</label> 
+		<input type="text" name="company" value="">
+	</div>
+    <br>
+	<div>
+		<label for="comment">Comment:</label>
+        <textarea name="description" rows="4" cols="30"></textarea>
+	</div>
+	<div><input type="submit" value="Enter"></div>
+</form>
+
+<h2>All the reviews </h2>
+<br>
+<h2>Filter By:</h2>
+
+<form method="GET" action="/forum">
+    Comment By:<input type="text" name = "reviewManName", value="">  
+    Game: <input type="text" name = "game", value="">  
+    {{!-- <input type="hidden" id="user" name="userName" value={{user.username}}> --}}
+    <input type = "submit" value="Search">
+</form>
+
+<br>
+
+ <table>
+  <tr>
+
+    <th> Game </th>
+    <th> User  </th>
+    <th> Time  </th>
+    <th> Detail </th>
+
+  </tr>
+
+    {{#each data as |ele|}}
+        <tr>
+            <td>
+                {{ele.game}}
+            </td>
+            <td>
+                {{ele.reviewManName}}
+            </td>
+            <td>
+                {{ele.timestamps}}
+            </td>
+            <td>
+                {{ele.description}}
+            </td>
+        </tr>
+    {{/each}}
+</table>
+
+
+<br>
+
+
+<br>
+

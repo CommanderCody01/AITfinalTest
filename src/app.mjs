@@ -96,7 +96,7 @@ app.post("/user/:slug",authRequired, async(req, res) =>{
 
     
 
-    console.log(user);
+    // console.log(user);
     // if( user.gameLists === null){
     //     user.gameLists = [];
     // }
@@ -105,8 +105,20 @@ app.post("/user/:slug",authRequired, async(req, res) =>{
 
 });
 
+app.get("/forum", authRequired, (req, res)=>{
+
+  const f1 = req.query.reviewManName;                 // filter 1
+  const f2 = req.query.game;
+  const f3 = req.query.userName;
+  console.log(f3);
+    
+
+  res.render('forum');
+})
+
+
 app.get("/register",(req, res) =>{
-    res.render('register')
+    res.render('register');
 });
 
 app.post('/register', async (req, res) => {
