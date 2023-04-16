@@ -8,6 +8,8 @@ import session from 'express-session';
 import './db.mjs';
 import {startAuthenticatedSession, endAuthenticatedSession} from './auth.mjs';
 
+// 要在 SRC 下run
+
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -50,9 +52,17 @@ app.get("/",(req, res) =>{
 app.get("/user/:slug",authRequired, async(req, res) =>{
 
     const user = await User.findOne({username: req.params.slug}).exec();
+
+    const gameLst = user.gameLists;
+
+    // const f1 = req.query.gameName;                 // filter 1
+    // const f2 = req.query.company;
+    // const f3 = req.query.year;
+    // const f4 = req.query.type;
+
     
-    console.log(user);
-    res.render('user',{data: user.gameLists});
+    // console.log(user);
+    res.render('user',{data: gameLst});
 
 });
 
