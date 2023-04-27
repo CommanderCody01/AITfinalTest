@@ -1,4 +1,4 @@
-import express from 'express'
+import express from 'express';
 import mongoose from 'mongoose';
 import sanitize from 'mongo-sanitize';
 import path from 'path'
@@ -7,6 +7,7 @@ import bcrypt from 'bcryptjs';
 import session from 'express-session';
 import './db.mjs';
 import {startAuthenticatedSession, endAuthenticatedSession} from './auth.mjs';
+import { isNull } from 'util';
 
 // 要在 SRC 下run
 
@@ -59,10 +60,18 @@ app.get("/user/:slug",authRequired, async(req, res) =>{
     // const f2 = req.query.company;
     // const f3 = req.query.year;
     // const f4 = req.query.type;
+    let number = 0;
+    console.log(number)
+    if(gameLst.length !== 0){
+      let arr = gameLst.map((ele, i )=>{
+        number += 1;
+        return ele.gameName;
+      })
+      number = arr.length;
+    }
+    // console.log(number)
 
-    
-    // console.log(user);
-    res.render('user',{data: gameLst});
+    res.render('user',{data: gameLst, total: number});
 
 });
 
@@ -123,10 +132,20 @@ app.get("/forum", authRequired, async(req, res)=>{
     }
   }
 
+
   // const dataRe =  await Review.find(fiter).exec();
   Review.find(fiter).then(found =>{
     // res.render('main.hbs', {data: found});  
-    res.render('forum', {data:found} );
+    let number = 0;
+    // console.log(found);
+    number = found.reduce( function(accu, ele){
+      if(ele){
+        accu += 1;
+        return accu;
+      }
+    }, 0)
+    
+    res.render('forum', {data:found, total: number} );
   } );
 
   

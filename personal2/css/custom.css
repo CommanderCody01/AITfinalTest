@@ -1,0 +1,136 @@
+
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Light.ttf");
+}
+
+
+body{
+	background-color : lightblue;
+}
+
+
+#upperBlue{      /*header*/
+	text-align : center;
+	border : solid 1px blue;
+/*	display : flex;*/
+
+}
+
+
+#black{
+	border : solid 1px black;
+
+}
+
+
+#upperBlue{
+	border : solid 1px blue;
+
+}
+
+nav{
+	border : solid 1px pink;
+	flex-grow : 1;
+/*	width : 1200px;*/
+/*	margin : 0 auto;*/
+}
+
+nav ul{
+	list-style : none;
+	padding : 0px;
+	margin : 0px;
+	display : flex;
+	margin : 0 auto;
+	font-family : Roboto;
+	font-size: 20px;
+}
+
+nav ul a:{
+	flex-grow : 1;
+
+}
+
+nav ul a li{
+	border:  solid 1px black;
+	text-align : center;
+	padding : 10px;
+}
+
+
+nav ul a:visited{
+	color : red;
+}
+
+nav ul a:hover{
+	color : blue;
+}
+
+nav ul a:active{
+	color : black;
+}
+
+nav ul a:focus{
+	color : teal;
+}
+
+
+#mainAreablue{
+	border : solid 1px green;
+	display : flex;   /*// 让两个box平行*/
+
+
+}
+
+#red的passage1{
+	border : solid 1px darkblue;
+	flex-grow : 1;
+	font-family: "Times New Roman", Times, serif;
+
+}
+
+.wodeclass{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+}
+
+#red的text{
+	border : solid 1px darkblue;
+	flex-grow : 1;
+}
+
+
+footer{
+	border : solid 1px blue;
+	display : flex; 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

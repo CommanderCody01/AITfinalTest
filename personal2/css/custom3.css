@@ -1,0 +1,98 @@
+
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto-Light.ttf");
+}
+
+
+body{
+	
+	background: url("../images/ocean.jpg") no-repeat center center fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+
+  	border : solid 1px black;
+
+}
+
+header{
+	text-align : center;
+}
+
+#最上面blue{
+	border : solid 1px blue;
+
+}
+
+nav{
+	border : solid 1px blue;
+
+}
+
+nav ul{
+	list-style : none;
+	padding : 0px;
+	margin : 0px;
+	display : flex;
+}
+
+nav ul a:link{
+	flex-grow : 1;
+	color : green;
+	text-decoration : none;
+}
+
+
+nav ul a:visited{
+	color : red;
+}
+
+nav ul a:hover{
+	color : blue;
+}
+
+nav ul a:active{
+	color : black;
+}
+
+nav ul a:focus{
+	color : teal;
+}
+
+
+.div{
+	display : flex;
+
+}
+
+.intro{
+	border : solid 1px blue;
+	flex-grow : 1;
+
+}
+
+h3,p{
+	font-family : Roboto;
+	font-size: 25px;
+}
+
+.photo{
+	border : solid 1px blue;
+	flex-grow : 1;
+}
+
+/*#maps{
+	flex-grow : 1
+}
+
+footer{
+	display : flex;
+
+}
+*/
+
+
+
+

@@ -3,7 +3,7 @@ import slug from 'mongoose-slug-updater';
 
 
 
-console.log('Waiting for connection to database...')
+// console.log('Waiting for connection to database...')
 // try {
 //   await mongoose.connect('mongodb://localhost/finalTest', {useNewUrlParser: true});
 //   console.log('Successfully connected to database.')

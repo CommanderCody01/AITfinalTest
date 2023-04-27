@@ -25,6 +25,11 @@
     "mongo-sanitize": "^1.1.0",
     "mongoose": "^7.0.3",
     "mongoose-slug-updater": "^3.3.0",
-    "parsing": "^2.3.0"
+    "parsing": "^2.3.0",
+    "puppeteer": "^19.11.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "supertest": "^6.3.3"
   }
 }

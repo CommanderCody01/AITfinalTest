@@ -1,0 +1,63 @@
+.noPadding{
+	padding : 0px;
+}
+
+.height10{
+	height : 10px;
+}
+
+.height20{
+	height : 20px;
+}
+
+.height65{
+	height : 65px;
+}
+
+.height75{
+	height : 75px;
+}
+
+
+.height100{
+	height : 100px;
+}
+
+.height200{
+	height : 200px;
+}
+
+.height300{
+	height : 300px;
+}
+
+.height400{
+	height : 400px;
+}
+
+.gray{
+	background: #D3D3D3;
+}
+
+/*.photo2{
+	background: black;
+}*/
+
+
+.white{
+	background: #F8F8FF;
+}
+
+
+header a{
+	color: white;
+	font-size : 20pt;
+	padding: 10px;
+}
+
+header i{
+	color : white;
+	font-size : 20pt;
+	padding: 10px;
+}
+
