@@ -105,7 +105,11 @@ Mocha for testing & Bootstrap for front-end framework
     * used vue.js as the frontend framework; it's a challenging library to learn, so I've assigned it 5 points
 
 10 points total out of 8 required points (___TODO__: addtional points will __not__ count for extra credit)
-
+  
+  Mocha Test 3 points
+  Headless Chrome 3 points
+  Bootstrap 2 points
+  Jquery  5 points
 
 ## [Link to Initial Main Project File](app.mjs) 
 
